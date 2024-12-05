@@ -3,7 +3,7 @@ import MenuItem from "./menu-item";
 import MenuTitle from "./menu-title";
 import Link from "next/link";
 import { LightDarkToggle } from "@/components/ui/mode-toggle";
-import { BellIcon, FileUpIcon, GaugeCircleIcon, HelpCircleIcon, PieChartIcon, SettingsIcon, SquareUserIcon, WorkflowIcon } from "lucide-react";
+import { BellIcon, FileUpIcon, GaugeCircleIcon, HelpCircleIcon, PieChartIcon, SquareUserIcon, WorkflowIcon } from "lucide-react";
 
 export default function MainMenu() {
     return (
@@ -46,12 +46,6 @@ export default function MainMenu() {
                     <div className="flex items-center space-x-2">
                         <SquareUserIcon className="w-5 h-5" />
                         <span>Profile Management</span>
-                    </div>
-                </MenuItem>
-                <MenuItem href="/business-dashboard/settings">
-                    <div className="flex items-center space-x-2">
-                        <SettingsIcon className="w-5 h-5" />
-                        <span>Settings</span>
                     </div>
                 </MenuItem>
                 <MenuItem href="/business-dashboard/help">

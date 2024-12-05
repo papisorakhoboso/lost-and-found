@@ -6,7 +6,7 @@ import OthersAnalysisChart from "./others-analysis-chart";
 import LossRecoveryChart from "./loss-recovery-chart";
 
 
-export default function NationalDocuments() {
+export default function OtherDocuments() {
     return(
         <>
             <div className="grid lg:grid-cols-4 gap-3">

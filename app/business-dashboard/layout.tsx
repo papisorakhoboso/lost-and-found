@@ -6,7 +6,7 @@ export default function BusinessDashboardLayout({children} : {children : ReactNo
         <div className="grid grid-cols-[250px_1fr] h-screen">
             <MainMenu/>
             <div className="overflow-auto py-2 px-4">
-                <h2 className="font-extrabold pb-4">Moafrika FM</h2>
+                <h2 className="font-extrabold pb-4">Lesotho Mounted Police Service</h2>
                 {children}
             </div>
         </div>

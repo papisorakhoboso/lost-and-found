@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
 
 
+
 const formSchema = z.object({
     email : z.string().email(),
     password : z.string(),
@@ -33,7 +34,7 @@ export default function LoginPage() {
     });
 
     const handleSubmit = () => {
-        console.log("Loggin successful");
+        window.location.href = "/business-dashboard";
     }
 
     return <>

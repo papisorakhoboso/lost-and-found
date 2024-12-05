@@ -27,8 +27,8 @@ export default function NationalDocuments() {
                         </div>
                         <div className="flex items-center gap-4">
                     
-                        <Button asChild size="xs">
-                            <Link href="/">View all</Link>
+                        <Button asChild size="xs" className="text-white">
+                            <Link href="/business-dashboard/manage-documents">View all</Link>
                         </Button>
                         </div>
                     </CardContent>
@@ -50,7 +50,7 @@ export default function NationalDocuments() {
                         </div>
                         <div className="flex items-center gap-4">
                     
-                        <Button asChild size="xs">
+                        <Button asChild size="xs" className="text-white">
                             <Link href="/">View all</Link>
                         </Button>
                         </div>
@@ -73,7 +73,7 @@ export default function NationalDocuments() {
                         </div>
                         <div className="flex items-center gap-4">
                     
-                        <Button asChild size="xs">
+                        <Button asChild size="xs" className="text-white">
                             <Link href="/">View all</Link>
                         </Button>
                         </div>

@@ -1,4 +1,3 @@
-// import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Inter } from 'next/font/google'

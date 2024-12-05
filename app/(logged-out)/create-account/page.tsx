@@ -6,8 +6,6 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Form, FormControl,FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-// import { Label } from "@/components/ui/label"
-// import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
     Select,
@@ -110,10 +108,10 @@ export default function CreateAccountPage() {
                         <FormField control={form.control} name="accountType" render={({field}) => (
                             <FormItem>
                                 <div className="flex items-center gap-2">
-                                <FormLabel>
-                                    Account type *
-                                </FormLabel>
-                                <CircleHelp className="text-blue-600" size={"16"}></CircleHelp>
+                                    <FormLabel>
+                                        Account type *
+                                    </FormLabel>
+                                    <CircleHelp className="text-blue-600" size={"16"}></CircleHelp>
                                 </div>
                                 <Select onValueChange={field.onChange}>
                                     <FormControl>
