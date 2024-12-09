@@ -9,6 +9,8 @@ import { InfoIcon, KeySquareIcon, ShieldEllipsisIcon, Trash2Icon, UserCogIcon } 
 import { Button } from "@/components/ui/button";
 import ProfileGeneral from "../components/profile-general/page";
 import UserManagement from "../components/user-management/page";
+import ChangePassword from "../components/change-password/page";
+import Security from "../components/security/page";
 
 export default function ProfilePage() {
   
@@ -46,67 +48,16 @@ export default function ProfilePage() {
                     <TabsContent value="user-manage">
                         <UserManagement/>
                     </TabsContent>
-                    <TabsContent value="change-password">Change Password</TabsContent>
-                    <TabsContent value="security">Security</TabsContent>
+                    <TabsContent value="change-password">
+                        <ChangePassword/>
+                    </TabsContent>
+                    <TabsContent value="security">
+                        <Security/>
+                    </TabsContent>
                  
                   </Tabs>
                 </CardContent>
           </Card>
-
-              {/* <Card className="mt-4 grow">
-                <CardHeader className="py-3 text-sm font-bold"></CardHeader>
-                <CardContent>
-                <Form {...form}>
-                      <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(handleSubmit)}>
-                          <FormField control={form.control} name = "businessName" render={({field}) =>(
-                              <FormItem>
-                                  <FormControl>
-                                      <Input placeholder="e.g xyz company"  {...field}/>
-                                  </FormControl>
-                                  <FormMessage className="text-xs"/>
-                              </FormItem>
-                          )}/> 
-                          <FormField control={form.control} name = "businessName" render={({field}) =>(
-                              <FormItem>
-                                  <FormControl>
-                                      <Input placeholder="e.g xyz company"  {...field}/>
-                                  </FormControl>
-                                  <FormMessage className="text-xs"/>
-                              </FormItem>
-                          )}/> 
-                      </form>
-                    </Form>
-                  
-                </CardContent>
-                
-              </Card>
-              <Card className="mt-4 grow">
-                <CardHeader className="py-3 text-sm font-bold"></CardHeader>
-                <CardContent>
-                <Form {...form}>
-                      <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(handleSubmit)}>
-                          <FormField control={form.control} name = "businessName" render={({field}) =>(
-                              <FormItem>
-                                  <FormControl>
-                                      <Input placeholder="e.g xyz company"  {...field}/>
-                                  </FormControl>
-                                  <FormMessage className="text-xs"/>
-                              </FormItem>
-                          )}/> 
-                          <FormField control={form.control} name = "businessName" render={({field}) =>(
-                              <FormItem>
-                                  <FormControl>
-                                      <Input placeholder="e.g xyz company"  {...field}/>
-                                  </FormControl>
-                                  <FormMessage className="text-xs"/>
-                              </FormItem>
-                          )}/> 
-                      </form>
-                    </Form>
-                  
-                </CardContent>
-                
-              </Card> */}
       </div>
     </>
   );

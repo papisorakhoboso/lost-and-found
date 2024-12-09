@@ -15,6 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "./button";
 import {
   ChevronLeft,
@@ -32,6 +33,7 @@ type DataTableProps<TData> = {
 
 function DataTable<TData>({ columns, data }: DataTableProps<TData>) {
   const [globalFilter, setGlobalFilter] = useState(""); // State for global filter
+  const [selectedRowIds, setSelectedRowIds] = useState<Record<string, boolean>>({}); // Selection state
 
   const table = useReactTable({
     data,
@@ -50,6 +52,25 @@ function DataTable<TData>({ columns, data }: DataTableProps<TData>) {
     },
   });
 
+  const allSelected = table.getRowModel().rows.every((row) => selectedRowIds[row.id]);
+  const someSelected = table.getRowModel().rows.some((row) => selectedRowIds[row.id]);
+
+  const toggleSelectRow = (rowId: string) => {
+    setSelectedRowIds((prev) => ({
+      ...prev,
+      [rowId]: !prev[rowId],
+    }));
+  };
+
+  const toggleSelectAll = (isChecked: boolean) => {
+    const allRowIds = table.getRowModel().rows.map((row) => row.id);
+    setSelectedRowIds(
+      isChecked
+        ? Object.fromEntries(allRowIds.map((id) => [id, true]))
+        : {}
+    );
+  };
+
   return (
     <div>
       {/* Filter Input */}
@@ -66,8 +87,21 @@ function DataTable<TData>({ columns, data }: DataTableProps<TData>) {
       {/* Table */}
       <Table>
         <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} className="table-row-custom">
+          {table.getHeaderGroups().map((headerGroup, index) => (
+            <TableRow key={headerGroup.id} className="table-row-custom ${
+              selectedRowIds[row.id] ? 'bg-blue-50 dark:bg-slate-950 dark:hover:bg-slate-900 transition-colors' : ''
+            } hover:bg-blue-100">
+              {index === 0 && (
+                <TableHead>
+                  <Checkbox
+                    checked={allSelected}
+                    onCheckedChange={(checked) => toggleSelectAll(!!checked)}
+                    className={`${
+                      someSelected && !allSelected ? "indeterminate" : ""
+                    }`}
+                  />
+                </TableHead>
+              )}
               {headerGroup.headers.map((header) => (
                 <TableHead key={header.id} className="table-cell-custom">
                   {flexRender(
@@ -82,7 +116,19 @@ function DataTable<TData>({ columns, data }: DataTableProps<TData>) {
         <TableBody>
           {table.getRowModel().rows.length > 0 ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id} className="table-row-custom">
+              <TableRow
+                key={row.id}
+                className={`table-row-custom ${
+                  selectedRowIds[row.id] ? "text-sm bg-blue-50 transition-colors dark:bg-slate-900" : ""
+                } hover:bg-blue-100 dark:hover:bg-slate-800`}
+              >
+                <TableCell>
+                  <Checkbox
+                    className="border-spacing-4"
+                    checked={selectedRowIds[row.id] || false}
+                    onCheckedChange={() => toggleSelectRow(row.id)}
+                  />
+                </TableCell>
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id} className="table-cell-custom">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -92,7 +138,7 @@ function DataTable<TData>({ columns, data }: DataTableProps<TData>) {
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={columns.length} className="text-center">
+              <TableCell colSpan={columns.length + 1} className="text-center">
                 No results found.
               </TableCell>
             </TableRow>
