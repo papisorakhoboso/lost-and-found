@@ -17,7 +17,7 @@ export default function ProfilePage() {
   return (
     <>
  
-      <div>
+      <div className="mt-3">
           <Card>
               <CardHeader className="py-3 font-extrabold">Profile Management</CardHeader>
                 <CardContent>

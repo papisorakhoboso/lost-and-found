@@ -95,77 +95,77 @@ export const columns: ColumnDef<User>[] = [
 
       return (
         <TooltipProvider>
-        <div className="flex justify-end gap-2">
-          {/* Tooltip for Edit Button */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    className="hover:bg-primary hover:text-white"
-                    variant={"outline"}
-                    size={"xs"}
-                  >
-                    <PencilIcon />
-                  </Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Edit User</DialogTitle>
-                  </DialogHeader>
-                  <DialogDescription>
-                    Edit the details of <strong>{user.username}</strong>.
-                  </DialogDescription>
-
-                  {/* Form for Editing User */}
-                  <EditUserForm user={user} />
-                </DialogContent>
-              </Dialog>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Edit this user</p>
-            </TooltipContent>
-          </Tooltip>
-
-          {/* Tooltip for Delete Button */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <Button
-                    className="hover:bg-red-600 hover:text-white"
-                    variant={"secondary"}
-                    size={"xs"}
-                  >
-                    <TrashIcon />
-                  </Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>Confirm Deletion</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      Are you sure you want to delete <strong>{user.username}</strong>? This action
-                      cannot be undone.
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction
-                      onClick={() => {
-                        handleDelete(user);
-                      }}
+          <div className="flex justify-end gap-2">
+            {/* Tooltip for Edit Button */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      className="hover:bg-primary hover:text-white"
+                      variant={"outline"}
+                      size={"xs"}
                     >
-                      Delete
-                    </AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Delete this user</p>
-            </TooltipContent>
-          </Tooltip>
-        </div>
+                      <PencilIcon />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Edit User</DialogTitle>
+                    </DialogHeader>
+                    <DialogDescription>
+                      Edit the details of <strong>{user.username}</strong>.
+                    </DialogDescription>
+
+                    {/* Form for Editing User */}
+                    <EditUserForm user={user} />
+                  </DialogContent>
+                </Dialog>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Edit this user</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* Tooltip for Delete Button */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button
+                      className="hover:bg-red-600 hover:text-white"
+                      variant={"secondary"}
+                      size={"xs"}
+                    >
+                      <TrashIcon />
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Confirm Deletion</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        Are you sure you want to delete <strong>{user.username}</strong>? This action
+                        cannot be undone.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction
+                        onClick={() => {
+                          handleDelete(user);
+                        }}
+                      >
+                        Delete
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Delete this user</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
       </TooltipProvider>
       );
     },
@@ -254,7 +254,7 @@ const EditUserForm = ({ user }: { user: User }) => {
                 <FormMessage />
               </FormItem>
             )}
-        />
+        />  
         <div className="flex justify-end gap-2">
           <Button variant="secondary" type="button">
             Cancel

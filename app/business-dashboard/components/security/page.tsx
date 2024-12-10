@@ -5,6 +5,7 @@ import {
     FormItem,
     FormControl,
     FormMessage,
+    FormDescription
   } from "@/components/ui/form";
   import { useForm } from "react-hook-form";
   import { Card, CardContent } from "@/components/ui/card";
@@ -64,7 +65,7 @@ import {
                   name="authenticationMethod"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Select Authentication Method *</FormLabel>
+                      <FormLabel>Two Factor Authentication *</FormLabel>
                       <FormControl>
                         <RadioGroup
                           value={field.value}
@@ -92,6 +93,9 @@ import {
                                         className="text-gray-700"
                                       />
                                     </FormControl>
+                                    <FormDescription className="text-xs">
+                                        Email where you want to receive the SMS code
+                                    </FormDescription>
                                     <FormMessage className="text-xs" />
                                   </FormItem>
                                 )}
@@ -116,6 +120,9 @@ import {
                                         className="text-gray-700"
                                       />
                                     </FormControl>
+                                    <FormDescription className="text-xs">
+                                        Phone number where you want to receive the SMS code
+                                    </FormDescription>
                                     <FormMessage className="text-xs" />
                                   </FormItem>
                                 )}

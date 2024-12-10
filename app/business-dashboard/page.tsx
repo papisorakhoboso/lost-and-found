@@ -4,7 +4,8 @@ import OtherDocuments from "./components/others/other-documents";
 
 export default function BusinessDashboardPage() {
     return (
-        <Tabs defaultValue="national-docs">
+        <div className="mt-2">
+            <Tabs defaultValue="national-docs">
             <TabsList className="bg-slate-300 dark:bg-gray-800 mb-4 ">
                 <TabsTrigger value="national-docs" className="data-[state=active]:font-semibold data-[state=active]:text-primary">
                     National Documents
@@ -19,6 +20,8 @@ export default function BusinessDashboardPage() {
             <TabsContent value="others">
                 <OtherDocuments/>
             </TabsContent>
-        </Tabs>
+        </Tabs> 
+        </div>
+       
     );   
 }
