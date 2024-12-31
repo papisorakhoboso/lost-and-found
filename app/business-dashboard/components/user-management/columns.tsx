@@ -79,7 +79,7 @@ export const columns: ColumnDef<User>[] = [
       return isStatusActive ? (
         <Badge variant={"success"}>Active</Badge>
       ) : (
-        <Badge variant={"destructive"}>Inactive</Badge>
+        <Badge variant={"error"}>Inactive</Badge>
       );
     },
   },

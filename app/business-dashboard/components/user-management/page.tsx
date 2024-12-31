@@ -7,8 +7,6 @@ import DataTable from "@/components/ui/data-table";
 // import { ColumnDef } from "@tanstack/react-table";
 import { columns,User } from "./columns";
 
-
-
 export default function UserManagement() {
   const [businessUsers, setBusinessUsers] = useState<User[] | null>(null);
 

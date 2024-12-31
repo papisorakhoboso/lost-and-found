@@ -22,7 +22,6 @@ import {
   ChevronRightIcon,
   ChevronsLeftIcon,
   ChevronsRightIcon,
-  CirclePlusIcon,
   CircleXIcon,
 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -77,17 +76,12 @@ function DataTable<TData>({ columns, data }: DataTableProps<TData>) {
     <div>
 
     <div className="flex items-center space-x-3 mb-4">
-      
       {Object.values(selectedRowIds).some((isSelected) => isSelected) && (
         <Button variant={"actionError"} className="flex items-center space-x-1">
           <CircleXIcon className="h-4 w-4" />
           <span>Delete</span>
         </Button>
       )}
-       <Button variant={"actionPrimary"} className="flex items-center space-x-1">
-          <CirclePlusIcon className="h-4 w-4" />
-          <span>Add User</span>
-        </Button>
       <Input
         type="text"
         value={globalFilter || ""}

@@ -17,7 +17,7 @@ export default function Loading() {
                     <Skeleton className="h-10 w-full dark:bg-slate-800 bg-slate-200"/>
                     <Skeleton className="h-10 w-full dark:bg-slate-800 bg-slate-200"/>
                     <Skeleton className="h-10 w-full dark:bg-slate-800 bg-slate-200"/>
-                    <Skeleton className="h-10 w-full dark:bg-slate-800 bg-slate-200"/>
+                    <Skeleton className="h-8 w-full dark:bg-slate-800 bg-slate-200"/>
                     
                     <Skeleton className="h-5 w-full dark:bg-slate-800 bg-slate-200"/>
                     <Skeleton className="h-10 w-full dark:bg-slate-800 bg-slate-200"/>
